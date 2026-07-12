@@ -12,7 +12,7 @@ router = APIRouter()
 class ContactForm(BaseModel):
     """Contact form submission model."""
     name: str = Field(..., min_length=2, max_length=100)
-    email: str
+    email: EmailStr
     phone: str = Field(..., min_length=10, max_length=15)
     subject: str = Field(..., min_length=5, max_length=200)
     message: str = Field(..., min_length=10, max_length=1000)
@@ -21,11 +21,11 @@ class ContactForm(BaseModel):
 
 class QuoteRequest(BaseModel):
     """Quote request model for custom requirements."""
-    name: str
-    email: str
-    phone: str
+    name: str = Field(..., min_length=2, max_length=100)
+    email: EmailStr
+    phone: str = Field(..., min_length=10, max_length=15)
     project_type: str
-    description: str
+    description: str = Field(..., min_length=10, max_length=1000)
     budget_range: Optional[str] = None
     area_sq_ft: Optional[float] = None
 

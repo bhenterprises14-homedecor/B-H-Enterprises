@@ -440,7 +440,7 @@ st.sidebar.info(
 
     📞 {CONTACT_PHONE}
     📧 {CONTACT_EMAIL}
-    🏢 Bangalore, India
+    🏢 Delhi, India
     """
 )
 

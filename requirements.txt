@@ -6,7 +6,7 @@ pydantic[email]==2.4.2
 python-dotenv==1.0.0
 structlog==23.2.0
 requests==2.31.0
-pillow==10.0.1
+pillow>=11.0.0
 aiofiles==23.2.1
 rich==13.7.0
 markdown-it-py==4.2.0

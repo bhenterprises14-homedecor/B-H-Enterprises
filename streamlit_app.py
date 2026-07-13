@@ -45,8 +45,11 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# API Configuration
+# API Configuration - Load from secrets
 API_BASE_URL = st.secrets.get("API_URL", "http://localhost:8000")
+CONTACT_EMAIL = st.secrets.get("CONTACT_EMAIL", "Jafar@bhenterprises.com")
+CONTACT_PHONE = st.secrets.get("CONTACT_PHONE", "+91-8882302674")
+GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY", "")
 
 
 def fetch_from_api(endpoint):
@@ -194,8 +197,8 @@ elif page == "Contact":
     
     with col1:
         st.markdown("### Contact Information")
-        st.write("📞 +91-XXXXXXXXXX")
-        st.write("📧 info@bhenterprises.com")
+        st.write(f"📞 {CONTACT_PHONE}")
+        st.write(f"📧 {CONTACT_EMAIL}")
         st.write("📍 Bangalore, India")
         st.write("🏢 GST: 07ETTPM3697B1Z4")
     
@@ -338,13 +341,13 @@ elif page == "Testimonials":
 st.sidebar.divider()
 st.sidebar.markdown("### About")
 st.sidebar.info(
-    """
+    f"""
     **B H Enterprises**
     
     Premium Building Materials & Home Decorator Services
     
-    📞 +91-XXXXXXXXXX
-    📧 info@bhenterprises.com
+    📞 {CONTACT_PHONE}
+    📧 {CONTACT_EMAIL}
     🏢 Bangalore, India
     """
 )
